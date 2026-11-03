@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block contenido %}
+  <h1>Galaxy</h1>
+  <p>Defendé la galaxia de la lluvia de meteoros. Cada nivel tiene una meta de puntos y un número de vidas.</p>
+  <h2>Cómo se juega</h2>
+  <ul>
+    <li>Flechas del teclado: mover la nave.</li>
+    <li>Barra espaciadora: disparar.</li>
+    <li>Cada enemigo destruido suma 10 puntos. Si un enemigo toca la nave, perdés una vida.</li>
+    <li>Ganás al llegar a la meta. Perdés si se acaban las vidas.</li>
+  </ul>
+  <p><a class="boton" href="{% url 'juegos:niveles' %}">Elegir nivel</a></p>
+{% endblock %}

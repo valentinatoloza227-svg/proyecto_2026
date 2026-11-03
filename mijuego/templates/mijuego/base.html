@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Mi Videojuego{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #101820; color: #eee; margin: 0; }
+        nav { background: #ff3366; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .contenido { max-width: 700px; margin: 30px auto; padding: 0 20px; }
+        h1 { color: #ffcc00; }
+        .tarjeta { background: #1c2b3a; border-left: 5px solid #ff3366;
+                   padding: 12px 18px; margin: 12px 0; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'juego_inicio' %}">Inicio</a>
+        <a href="{% url 'juego_personajes' %}">Personajes</a>
+        <a href="{% url 'juego_niveles' %}">Niveles</a>
+        <a href="{% url 'juego_controles' %}">Controles</a>
+        <a href="{% url 'juego_creditos' %}">creditos</a>
+    </nav>
+    <div class="contenido">
+        <h1>{% block encabezado %}{% endblock %}</h1>
+        {% block contenido %}{% endblock %}
+    </div>
+</body>
+</html>
+

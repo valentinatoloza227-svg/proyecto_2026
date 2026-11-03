@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Nivel {{ nivel.numero }} - Galaxy{% endblock %}
+{% block contenido %}
+  <h1>Nivel {{ nivel.numero }}: {{ nivel.nombre }}</h1>
+  <p>Meta: {{ nivel.meta_puntos }} puntos. Vidas: {{ nivel.vidas }}. Hacé clic en el juego antes de empezar.</p>
+  {# TODO 1: poner el juego en la página: el contenedor, la configuración del nivel y los dos scripts. #}
+  <div id="juego"></div>
+  <script src="{% static 'juegos/phaser.min.js' %}"></script>
+  <script src="{% static 'juegos/galaxy/game.js' %}"></script>
+  <p><a class="boton secundario" href="{% url 'juegos:niveles' %}">Volver a los niveles</a></p>
+{% endblock %}

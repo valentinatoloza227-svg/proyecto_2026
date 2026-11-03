@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block titulo %}Perdiste - PROA Arcade{% endblock %}
+{% block contenido %}
+  <section class="resultado perdiste">
+    <h1>Perdiste</h1>
+    <p>Nivel {{ partida.nivel.numero }}: {{ partida.nivel.nombre }}</p>
+    <p>Hiciste {{ partida.puntos }} puntos de {{ partida.nivel.meta_puntos }}.</p>
+    <a class="boton" href="{% url 'juegos:jugar' partida.nivel.numero %}">Reintentar</a>
+    <a class="boton secundario" href="{% url 'juegos:niveles' %}">Ver niveles</a>
+  </section>
+{% endblock %}

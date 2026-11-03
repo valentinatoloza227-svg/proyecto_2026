@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titulo %}Niveles - PROA Arcade{% endblock %}
+{% block contenido %}
+  <h1>Niveles</h1>
+  {% for nivel in niveles %}
+    <article>
+      <h2>Nivel {{ nivel.numero }}: {{ nivel.nombre }}</h2>
+      <p>{{ nivel.descripcion }}</p>
+      <p>Meta: {{ nivel.meta_puntos }} puntos. Vidas: {{ nivel.vidas }}.</p>
+      <a class="boton" href="{% url 'juegos:jugar' nivel.numero %}">Jugar</a>
+    </article>
+  {% empty %}
+    <p>Todavía no hay niveles. Cargalos desde el panel de administración.</p>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+[
+  {"model": "juegos.nivel", "pk": 1, "fields": {"numero": 1, "nombre": "Patrulla inicial",
+    "descripcion": "Pocos enemigos y lentos. Ideal para aprender los controles.",
+    "meta_puntos": 50, "vidas": 3, "velocidad_enemigos": 2.0, "frames_entre_enemigos": 70}},
+  {"model": "juegos.nivel", "pk": 2, "fields": {"numero": 2, "nombre": "Lluvia de meteoros",
+    "descripcion": "Los enemigos caen más rápido y aparecen más seguido.",
+    "meta_puntos": 100, "vidas": 3, "velocidad_enemigos": 3.0, "frames_entre_enemigos": 55}},
+  {"model": "juegos.nivel", "pk": 3, "fields": {"numero": 3, "nombre": "Tormenta final",
+    "descripcion": "Solo dos vidas y una lluvia constante. Para pilotos expertos.",
+    "meta_puntos": 150, "vidas": 2, "velocidad_enemigos": 4.0, "frames_entre_enemigos": 40}}
+]

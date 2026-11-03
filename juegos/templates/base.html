@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}PROA Arcade{% endblock %}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #071027; color: #e6f3ff; margin: 0; }
+    nav { display: flex; gap: 16px; align-items: center; padding: 12px 24px; background: #0b1b3d; }
+    nav a { color: #7dd3fc; }
+    nav form { margin: 0; }
+    main { max-width: 960px; margin: 0 auto; padding: 24px; }
+    article { background: #0b1b3d; border: 1px solid #1e3a6e; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    a.boton, button { background: #00a8cc; color: #04121f; border: 0; border-radius: 6px; padding: 8px 14px; text-decoration: none; font-weight: 600; cursor: pointer; display: inline-block; }
+    a.boton.secundario { background: transparent; color: #7dd3fc; border: 1px solid #7dd3fc; }
+    .resultado { text-align: center; padding: 32px 0; }
+    .resultado h1 { font-size: 48px; margin: 0 0 8px; }
+    .ganaste h1 { color: #5ee6a8; }
+    .perdiste h1 { color: #ff7a90; }
+    #juego { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>PROA Arcade</strong>
+    <a href="{% url 'juegos:inicio' %}">Inicio</a>
+    <a href="{% url 'juegos:niveles' %}">Niveles</a>
+    <span style="flex:1"></span>
+    {% if user.is_authenticated %}
+      <span>{{ user.username }}</span>
+      
+    {% endif %}
+  </nav>
+  <main>{% block contenido %}{% endblock %}</main>
+</body>
+</html>
